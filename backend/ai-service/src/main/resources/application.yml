@@ -1,0 +1,8 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: ai-service
+  config:
+    import: optional:file:.env[.properties]

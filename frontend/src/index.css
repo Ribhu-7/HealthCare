@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-on-surface font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  #root {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+/* ─── Layout Shell (CSS Grid) ─────────────────────────────── */
+@layer components {
+  .layout-shell {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .layout-sidebar {
+    grid-row: 1;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px;
+    gap: 4px;
+    background-color: theme('colors.surface');
+    border-right: 1px solid theme('colors.outline-variant');
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 50;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .layout-main {
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .layout-header {
+    flex-shrink: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    background-color: theme('colors.surface-bright');
+    border-bottom: 1px solid theme('colors.outline-variant');
+    gap: 16px;
+  }
+
+  .layout-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 24px;
+    background-color: theme('colors.background');
+  }
+
+  /* ─── Responsive: Collapse sidebar on mobile ────────────── */
+  @media (max-width: 1023px) {
+    .layout-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .layout-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 280px;
+      z-index: 60;
+    }
+
+    .layout-main {
+      grid-column: 1;
+    }
+  }
+
+  /* ─── Page-level right panel (opt-in) ───────────────────── */
+  .page-with-panel {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    min-height: 0;
+  }
+
+  .page-with-panel > .page-main {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .page-with-panel > .page-panel {
+    overflow-y: auto;
+    max-height: calc(100vh - 60px - 48px);
+    border-left: 1px solid theme('colors.outline-variant');
+    margin: -24px -24px -24px 0;
+    padding: 24px;
+    background-color: theme('colors.surface-bright');
+  }
+
+  @media (max-width: 1279px) {
+    .page-with-panel {
+      grid-template-columns: 1fr;
+    }
+
+    .page-with-panel > .page-panel {
+      display: none;
+    }
+  }
+
+  /* ─── Dense table styles ────────────────────────────────── */
+  .table-dense th,
+  .table-dense td {
+    @apply px-3 py-1.5 text-[13px];
+  }
+
+  .table-comfortable th,
+  .table-comfortable td {
+    @apply px-4 py-3 text-sm;
+  }
+
+  /* ─── Custom scrollbar ──────────────────────────────────── */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme('colors.outline-variant');
+    border-radius: 3px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: theme('colors.outline');
+  }
+
+  .layout-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  .layout-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .layout-content::-webkit-scrollbar-thumb {
+    background-color: theme('colors.outline-variant');
+    border-radius: 3px;
+  }
+
+  .layout-sidebar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .layout-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .layout-sidebar::-webkit-scrollbar-thumb {
+    background-color: theme('colors.outline-variant');
+    border-radius: 2px;
+  }
+}
+
+/* ─── Utilities ───────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
