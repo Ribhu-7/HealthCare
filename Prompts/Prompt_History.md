@@ -118,30 +118,10 @@ Generate the PRD now, covering all sections thoroughly.
 3. Do not write code unless you have full picture. If you have any questions, ask me first. Lets not waste tokens and build something we do not want.
 4. Only create maintainable modular code.
 
+# Development:
 [Agents](directory;file:///Users/neosoft/Documents/HealthCare/Agents) by refering to this file build the project and start it , kindly fix the ui as well as it is overlapping
 
-Nexus Health Enterprise OS
-projects/16341432217417999391
-
-docker compose -f infrastructure/docker/docker-compose.yml up -d
-
-mvn -f backend/pom.xml clean install -DskipTests
-
-fix the ui as what you made is overalpping a lot , navigations are not working , refer to  take Title: Nexus Health Enterprise OS & Interface ID: projects/16341432217417999391 from stitch ui and make ui 100% similar as it is there
-
-functionalities are not working at all on all pages , prescriptions page ui is distorted, unable to send messages to ai chatbot , kindly fix the issues so that each functionality works , 
-
-wire chatbot to spring boot backend and proceed
-
-wire all the functionalities mentioned in my [Agents](directory;file:///Users/neosoft/Documents/HealthCare/Agents) folder and connect it for frontend and backend so that the complete functionalities work in all the pages
-
-the functionalities are still not working in all the pages kindly fix the issues like backend and frontend should be wired properly, i can see ui issues as well with overlaps and shrink views please fix them , refer to [Agents](directory;file:///Users/neosoft/Documents/HealthCare/Agents) folder and try to fix all the functionalities and yes proceed to phase 2 and complete everything
-
-the ui is fine now but in dashboard when im clicking on new appointment it is not working like its not going anywhere or no functionality, same for register patient in patients page , the buttons in different pages are not working properly please fix the issues so that the website is end to end compatible with both backend and frontend
-
-the buttons are working now but appointments are failing and patient registration is also failing saying 500 status code , please fix the issues
-
-ai assistant page is giving a similar answer to every question and not giving correct response, settings page button functionalities, reports page button , still not working kindly fix it 
+create the necessary test files and test the entire project from frontend to backend to database and all screens and create a testreportstatus file as well giving the necessary output
 
 # FIX PROMPT
 # Healthcare HAPMS UI Refactoring Prompt
@@ -172,50 +152,32 @@ Rules:
 * Material UI Grid system
 Examples:
 Good:
-
 ```tsx
 grid-cols-1 md:grid-cols-2 xl:grid-cols-4
 ```
-
 Good:
-
 ```tsx
 flex flex-col lg:flex-row
 ```
-
 Bad:
-
 ```tsx
 position:absolute
 left:500px
 top:200px
 width:1200px
 ```
-
 ---
-
 # RESPONSIVENESS
-
 Ensure every screen works correctly on:
-
 ### Mobile
-
 390px
-
 ### Tablet
-
 768px
-
 ### Laptop
-
 1024px
-
 ### Desktop
-
 1440px+
-
 Fix:
-
 * overlapping cards
 * overflowing tables
 * clipped dialogs
@@ -223,112 +185,68 @@ Fix:
 * hidden buttons
 * chart overflow
 * form overflow
-
 ---
-
 # DASHBOARD FIXES
-
 Refactor all dashboards.
-
 Requirements:
-
 KPI Cards:
-
 * equal height
 * responsive grid
 * proper spacing
-
 Charts:
-
 * responsive width
 * responsive height
 * container-aware
-
 Tables:
-
 * horizontal scroll on mobile
 * sticky headers
-
 Widgets:
-
 * stack vertically on mobile
 * grid layout on desktop
-
 ---
-
 # SIDEBAR FIXES
-
 Implement production-grade sidebar.
-
 Requirements:
-
 Desktop:
-
 * fixed sidebar
 * collapsible
-
 Tablet:
-
 * collapsible
-
 Mobile:
-
 * drawer menu
-
 Preserve active route highlighting.
-
 Persist collapse state.
-
 ---
-
 # HEADER FIXES
-
 Fix top navigation.
-
 Requirements:
-
 * responsive search
 * notifications
 * profile menu
 * role badge
-
 Prevent overlap with page content.
-
 ---
-
 # NAVIGATION FIXES
-
 Audit entire routing system.
-
 Fix:
-
 * broken links
 * dead routes
 * missing pages
 * inconsistent route names
 * nested route failures
-
 Use React Router properly.
-
 Create:
-
 ```tsx
 MainLayout
 AuthLayout
 ProtectedRoute
 RoleGuard
 ```
-
 Ensure every sidebar item routes correctly.
-
 ---
-
 # COMPONENT REFACTORING
-
 Convert duplicated UI into reusable components.
-
 Create:
-
 * Button
 * Card
 * DataTable
@@ -339,100 +257,64 @@ Create:
 * StatusBadge
 * EmptyState
 * LoadingState
-
 Use consistent styling everywhere.
-
 ---
-
 # FORMS
-
 Refactor all forms.
-
 Requirements:
-
 * React Hook Form
 * Zod validation
 * Accessible labels
 * Error handling
 * Responsive layouts
-
 Fix:
-
 * overlapping inputs
 * broken validation
 * inconsistent spacing
-
 ---
-
 # TABLES
-
 Refactor all tables.
-
 Requirements:
-
 * sorting
 * filtering
 * pagination
 * loading states
 * empty states
-
 Responsive behavior:
-
 Desktop → full table
-
 Mobile → card/table hybrid view
-
 ---
-
 # ACCESSIBILITY
-
 Achieve WCAG 2.1 AA compliance.
-
 Fix:
-
 * missing labels
 * poor contrast
 * keyboard traps
 * missing focus states
 * incorrect ARIA attributes
-
 ---
-
 # PERFORMANCE
-
 Optimize frontend.
-
 Requirements:
-
 * Lazy loading
 * Route-based code splitting
 * Memoization where needed
 * Skeleton loaders
 * Avoid unnecessary rerenders
-
 Target:
-
 * Initial load < 2 seconds
 * Navigation < 500 ms
-
 ---
-
 # DESIGN CONSISTENCY
-
 Audit every screen.
-
 Ensure:
-
 * consistent spacing
 * consistent typography
 * consistent colors
 * consistent card styles
 * consistent button styles
-
 No visual regressions.
-
 Preserve the Stitch design language.
-
 ---
 
 # DELIVERABLE
@@ -455,3 +337,21 @@ Provide:
    * Desktop responsive
    * Accessible
    * Production ready
+
+
+# Fixes:
+fix the ui as what you made is overalpping a lot , navigations are not working , refer to  take Title: Nexus Health Enterprise OS & Interface ID: projects/16341432217417999391 from stitch ui and make ui 100% similar as it is there
+
+functionalities are not working at all on all pages , prescriptions page ui is distorted, unable to send messages to ai chatbot , kindly fix the issues so that each functionality works , 
+
+wire chatbot to spring boot backend and proceed
+
+wire all the functionalities mentioned in my [Agents](directory;file:///Users/neosoft/Documents/HealthCare/Agents) folder and connect it for frontend and backend so that the complete functionalities work in all the pages
+
+the functionalities are still not working in all the pages kindly fix the issues like backend and frontend should be wired properly, i can see ui issues as well with overlaps and shrink views please fix them , refer to [Agents](directory;file:///Users/neosoft/Documents/HealthCare/Agents) folder and try to fix all the functionalities and yes proceed to phase 2 and complete everything
+
+the ui is fine now but in dashboard when im clicking on new appointment it is not working like its not going anywhere or no functionality, same for register patient in patients page , the buttons in different pages are not working properly please fix the issues so that the website is end to end compatible with both backend and frontend
+
+the buttons are working now but appointments are failing and patient registration is also failing saying 500 status code , please fix the issues
+
+ai assistant page is giving a similar answer to every question and not giving correct response, settings page button functionalities, reports page button , still not working kindly fix it 
