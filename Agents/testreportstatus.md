@@ -11,24 +11,42 @@ This document serves as the official test report for the HAPMS project (Frontend
 **Status:** ✅ **PASSING**
 
 ### Executed Tests:
-- `ClinicalAssistantPage.test.tsx` (AI Assistant Rendering & Component Logic) - **PASS**
-- `PatientListPage.test.tsx` (Patient Directory Rendering & Router Wrapping) - **PASS**
-- `BillingListPage.test.tsx` (Billing Components & API Mock Rendering) - **PASS**
-- `ReportPage.test.tsx` (Report Metrics & Diagnostics Button) - **PASS**
+- `ClinicalAssistantPage.test.tsx` (AI Assistant Rendering) - **PASS**
+- `PatientListPage.test.tsx` (Patient Directory Rendering) - **PASS**
+- `BillingListPage.test.tsx` (Billing Components) - **PASS**
+- `ReportPage.test.tsx` (Reports Analytics Page) - **PASS**
+- `DoctorListPage.test.tsx` (Doctor Directory) - **PASS**
+- `AppointmentListPage.test.tsx` (Appointment Scheduling) - **PASS**
+- `PrescriptionCreatePage.test.tsx` (Prescription Issuance) - **PASS**
+- `NotificationListPage.test.tsx` (Notification Center) - **PASS**
+- `SystemSettingsPage.test.tsx` (System Settings) - **PASS**
+- `LoginPage.test.tsx` (Authentication View) - **PASS**
+- `AdminDashboard.test.tsx` (Admin Dashboard) - **PASS**
+- `DoctorDashboard.test.tsx` (Doctor Dashboard) - **PASS**
 
 ---
 
 ## 2. Backend Testing Status
-**Framework:** JUnit 5 + Spring Boot Test + MockMvc + Mockito
+**Framework:** JUnit 5 + Mockito + MockMvc + Spring Boot Test
 **Execution Command:** `mvn test`
+**Database:** H2 In-Memory (Test Isolation)
 **Status:** ✅ **PASSING**
 
-### `core-business-service`
-- `PatientControllerTest.java` (MockMvc API Testing) - **PASS**
-- `AppointmentServiceTest.java` (Business Logic & Mockito) - **PASS**
-
-### `ai-service`
-- `ChatControllerTest.java` (AI Controller & Web Layer) - **PASS**
+### Executed Tests:
+- **`core-business-service`**
+  - `PatientControllerTest.java` (MockMvc) - **PASS**
+  - `DoctorControllerTest.java` (MockMvc) - **PASS**
+  - `PrescriptionControllerTest.java` (MockMvc) - **PASS**
+  - `BillingControllerTest.java` (MockMvc) - **PASS**
+  - `AppointmentControllerTest.java` (MockMvc) - **PASS**
+  - `PatientRepositoryTest.java` (DataJpaTest) - **PASS**
+  - `AppointmentServiceTest.java` (Mockito) - **PASS**
+- **`auth-service`**
+  - `AuthControllerTest.java` (Authentication Endpoints) - **PASS**
+- **`reporting-service` (Audit Logs)**
+  - `ReportingControllerTest.java` (Audit Trail Test Cases) - **PASS**
+- **`ai-service`**
+  - `ChatControllerTest.java` (MockMvc) - **PASS**
 
 ---
 

@@ -355,3 +355,7 @@ the ui is fine now but in dashboard when im clicking on new appointment it is no
 the buttons are working now but appointments are failing and patient registration is also failing saying 500 status code , please fix the issues
 
 ai assistant page is giving a similar answer to every question and not giving correct response, settings page button functionalities, reports page button , still not working kindly fix it 
+
+# TESTING:
+make test cases (mock + audit_report) for every feature which mentioned in your project
+along with migrations scripts (if  db involved)

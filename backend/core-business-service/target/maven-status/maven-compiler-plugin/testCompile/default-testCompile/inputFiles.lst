@@ -1,3 +1,7 @@
+/Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/controller/AppointmentControllerTest.java
+/Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/controller/BillingControllerTest.java
+/Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/controller/DoctorControllerTest.java
 /Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/controller/PatientControllerTest.java
+/Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/controller/PrescriptionControllerTest.java
 /Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/repository/PatientRepositoryTest.java
 /Users/neosoft/Documents/HealthCare/backend/core-business-service/src/test/java/com/hapms/core/service/AppointmentServiceTest.java

@@ -1,0 +1,7 @@
+com/hapms/core/controller/BillingControllerTest.class
+com/hapms/core/service/AppointmentServiceTest.class
+com/hapms/core/controller/PrescriptionControllerTest.class
+com/hapms/core/repository/PatientRepositoryTest.class
+com/hapms/core/controller/DoctorControllerTest.class
+com/hapms/core/controller/PatientControllerTest.class
+com/hapms/core/controller/AppointmentControllerTest.class
